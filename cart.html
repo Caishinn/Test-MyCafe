@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart - Café Mocha</title>
+    <!--Link with Css-->
+    <link rel="stylesheet" href="./public/CSS/styles.css" />
+    <link rel="stylesheet" href="./public/CSS/header.css" />
+    <link rel="stylesheet" href="./public/CSS/menu.css" />
+    <link rel="stylesheet" href="./public/CSS/toast.css" />
+    <link rel="stylesheet" href="./public/CSS/cart.css" />
+    <link rel="stylesheet" href="./public/CSS/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Your Cart</h1>
+      <button id="back-btn" onclick="location.href='index.html'">
+        ← Back to Menu
+      </button>
+    </header>
+
+    <main>
+      <section class="cart-section">
+        <div id="cart-items"></div>
+        <div id="cart-summary"></div>
+        <button id="pay-btn" onclick="confirmPayment()">Confirm Payment</button>
+      </section>
+    </main>
+
+    <!-- Order Summary Modal -->
+    <div id="order-summary-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 class="modal-title">Order Summary</h2>
+
+        <div class="order-detail">
+          <p><strong>Order ID:</strong> <span id="summary-id"></span></p>
+          <p><strong>Date & Time:</strong> <span id="summary-date"></span></p>
+        </div>
+
+        <!-- ✅ QR Code Image -->
+        <div class="payment-qr">
+          <p><strong>Scan to Pay:</strong></p>
+          <img
+            src="./image/QR-Code.jpeg"
+            alt="QR Code for Payment"
+            width="180"
+          />
+        </div>
+        <!-- ✅ Total -->
+        <div class="order-total">
+          <h3>Total: $<span id="summary-total"></span></h3>
+        </div>
+
+        <!-- ✅ Title for Ordered Items -->
+        <div class="order-items-section">
+          <h3>Items Ordered</h3>
+          <!-- Add this title -->
+          <ul id="summary-items" class="summary-item-list"></ul>
+        </div>
+
+        <div class="modal-actions">
+          <button id="close-summary-btn" class="cancel-btn">Close</button>
+          <button id="final-confirm-btn" class="confirm-btn">
+            Place Order
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    
+
+    <!--link script -->
+
+    <script src="./public/JS/toast.js"></script>
+    <script src="./public/JS/loadcartpage.js"></script>
+    <script src="./public/JS/sttelegram.js"></script>
+    <script src="./public/JS/script.js"></script>
+  </body>
+</html>

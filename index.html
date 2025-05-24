@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow-Cafe</title>
+    
+    <!--Link with Css-->
+    <link rel="stylesheet" href="./public/CSS/styles.css">
+    <link rel="stylesheet" href="./public/CSS/header.css">
+    <link rel="stylesheet" href="./public/CSS/menu.css">
+    <link rel="stylesheet" href="./public/CSS/footer.css">
+    <link rel="stylesheet" href="./public/CSS/toast.css">
+    <link rel="stylesheet" href="./public/CSS/orderhistory.css">
+    <link rel="stylesheet" href="./public/CSS/responsive.css">
+    <link rel="stylesheet" href="./public/CSS/dailog.css">
+
+    <!--Link Font-->
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+   
+
+</head>
+<body>
+
+<!--Header-->
+
+    <header>
+  <h1>TT-MeowCoffee</h1>
+  <p class="tagline">Brewed with love ☕</p>
+
+  <!--Header buttons Cart with order history-->
+
+  <div class="header-buttons">
+    <button onclick="location.href='cart.html'">Cart 🛒 (<span id="cart-count">0</span>)</button>
+    <button onclick="location.href='order.html'">Order History 📜</button>
+
+  </div>
+</header>
+
+     <main>
+
+        <!--Menu -->
+    <section class="menu">
+      <h2>Our Menu</h2>
+
+      <!--Menu item-->
+      
+
+      <div class="menu-grid">
+
+<!-- green tea-->
+<div class="menu-item">
+  
+  <img  src="./image.png">
+  
+  <h3>Green Tea</h3>
+
+    <!--div class="qty-wrapper">
+    <button type="button" onclick="changeQty('qty-redtea', -1)">−</button>
+    <input type="number" id="qty-redtea" value="1" min="1" />
+    <button type="button" onclick="changeQty('qty-redtea', 1)">+</button>
+  </div-->
+  <!-- Add to Cart button -->
+   <div class="menu-content">
+  <button class="add-to-cart-btn" onclick="showDialog('Green Tea', 3)">
+    Add +
+  </button>
+  <p>$3.00</p></div>
+        
+</div>
+
+
+<!-- red tea-->
+<div class="menu-item">
+  
+  <img  src="./image.png">
+  
+  <h3>Red Tea</h3>
+
+    <!--div class="qty-wrapper">
+    <button type="button" onclick="changeQty('qty-redtea', -1)">−</button>
+    <input type="number" id="qty-redtea" value="1" min="1" />
+    <button type="button" onclick="changeQty('qty-redtea', 1)">+</button>
+  </div-->
+  <!-- Add to Cart button -->
+   <div class="menu-content">
+  <button class="add-to-cart-btn" onclick="showDialog('Red Tea', 3)">
+    Add +
+  </button>
+  <p>$3.00</p></div>
+        
+</div>
+
+<!-- Espresso-->
+ <div class="menu-item">
+  
+  <img  src="./image.png">
+  
+  <h3>Espresso</h3>
+
+    <!--div class="qty-wrapper">
+    <button type="button" onclick="changeQty('qty-redtea', -1)">−</button>
+    <input type="number" id="qty-redtea" value="1" min="1" />
+    <button type="button" onclick="changeQty('qty-redtea', 1)">+</button>
+  </div-->
+  <!-- Add to Cart button -->
+   <div class="menu-content">
+  <button class="add-to-cart-btn" onclick="showDialog('Espresso', 3)">
+    Add +
+  </button>
+  <p>$3.00</p></div>
+        
+</div>
+<!-- tea-->
+<div class="menu-item">
+  
+  <img  src="./image.png">
+  
+  <h3>Tea</h3>
+
+    <!--div class="qty-wrapper">
+    <button type="button" onclick="changeQty('qty-redtea', -1)">−</button>
+    <input type="number" id="qty-redtea" value="1" min="1" />
+    <button type="button" onclick="changeQty('qty-redtea', 1)">+</button>
+  </div-->
+  <!-- Add to Cart button -->
+   <div class="menu-content">
+  <button class="add-to-cart-btn" onclick="showDialog('Tea', 3)">
+    Add +
+  </button>
+  <p>$3.00</p></div>
+        
+</div>
+
+
+
+
+<!-- Add more items here -->
+
+    </section>
+  </main>
+
+<!--Footer -->
+
+  <footer>
+    <p>© 2025 Café Mocha. All rights reserved.</p>
+  </footer>
+  
+
+  <!--link script -->
+  
+  <script src="./public/JS/script.js"></script>
+  <script src="./public/JS/toast.js"></script>
+  <script src="./public/JS/addtocart.js"></script>
+  <script src="./public/JS/loadcartpage.js"></script>
+  <script src="./public/JS/sttelegram.js"></script>
+  <script src="./public/JS/showdialog.js"></script>
+  
+
+  <div id="toast" class="toast">✅ Added to cart!</div>
+  <!-- Drink Customization Dialog -->
+<div id="customize-dialog" class="dialog hidden">
+  <div class="dialog-content">
+    <h3 id="dialog-title">Customize Your Drink</h3>
+
+    <label>Sugar Level:</label>
+    <div>
+      <label><input type="radio" name="sugar" value="0%" checked> 0%</label>
+      <label><input type="radio" name="sugar" value="50%"> 50%</label>
+      <label><input type="radio" name="sugar" value="100%"> 100%</label>
+    </div>
+
+    <label>Size:</label>
+    <div>
+      <label><input type="radio" name="size" value="Small" checked> Small</label>
+      <label><input type="radio" name="size" value="Medium"> Medium</label>
+      <label><input type="radio" name="size" value="Large"> Large</label>
+    </div>
+
+    <label>Quantity:</label>
+    <div class="qty-wrapper">
+      <button type="button" onclick="updateQty(-1)">−</button>
+      <input type="number" id="dialog-qty" value="1" min="1" />
+      <button type="button" onclick="updateQty(1)">+</button>
+    </div>
+
+    <div class="dialog-actions">
+      <button onclick="closeDialog()">Cancel</button>
+      <button onclick="confirmAdd()">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
